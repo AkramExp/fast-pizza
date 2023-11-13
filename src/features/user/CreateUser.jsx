@@ -19,7 +19,11 @@ export default function CreateUser() {
         onChange={(e) => setUsername(e.target.value)}
         className="input mb-8 w-72"
       />
-      {username && <Button to="menu">Start Ordering</Button>}
+      {username && (
+        <Button to="menu" type="primary">
+          Start Ordering
+        </Button>
+      )}
     </form>
   );
 }
