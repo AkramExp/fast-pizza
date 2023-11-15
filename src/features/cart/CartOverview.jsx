@@ -9,7 +9,7 @@ export default function CartOverview() {
         <span>12.00</span>
       </p>
       <div>
-        <Link>Open Cart &rarr;</Link>
+        <Link to="cart">Open Cart &rarr;</Link>
       </div>
     </footer>
   );
