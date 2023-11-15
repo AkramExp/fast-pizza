@@ -2,11 +2,14 @@ import React from "react";
 import LinkButton from "../../ui/LinkButton";
 import CartItem from "./CartItem";
 import { useSelector } from "react-redux";
-import { getCart } from "./cartSlice";
+import { clearCart, getCart } from "./cartSlice";
 import EmptyCart from "./EmptyCart";
+import Button from "../../ui/Button";
+import { useDispatch } from "react-redux";
 
 export default function Cart() {
   const cart = useSelector(getCart);
+  const dispatch = useDispatch();
 
   if (!cart.length) return <EmptyCart />;
 
@@ -19,6 +22,12 @@ export default function Cart() {
           <CartItem pizza={pizza} key={pizza.pizzaId} />
         ))}
       </ul>
+      <div className="mt-6 space-x-3">
+        <Button type="primary">Order Pizzas</Button>
+        <Button type="secondary" onClick={() => dispatch(clearCart())}>
+          Clear Cart{" "}
+        </Button>
+      </div>
     </div>
   );
 }

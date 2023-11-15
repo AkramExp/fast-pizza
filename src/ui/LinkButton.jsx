@@ -11,5 +11,9 @@ export default function LinkButton({ children, to }) {
         {children}
       </button>
     );
-  return <Link className={className}>{children}</Link>;
+  return (
+    <Link to={to} className={className}>
+      {children}
+    </Link>
+  );
 }
