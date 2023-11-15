@@ -1,11 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import LinkButton from "../../ui/LinkButton";
 import CartItem from "./CartItem";
 import { useSelector } from "react-redux";
+import { getCart } from "./cartSlice";
 
 export default function Cart() {
-  const cart = useSelector((state) => state.cart.cart);
+  const cart = useSelector(getCart);
 
   return (
     <div className="mt-3">
@@ -13,7 +13,7 @@ export default function Cart() {
       <h1 className="mt-8 font-semibold text-lg mb-8">Your Cart, Akram</h1>
       <ul className="divide-y divide-stone-400 border-b space-y-2">
         {cart.map((pizza) => (
-          <CartItem pizza={pizza} />
+          <CartItem pizza={pizza} key={pizza.pizzaId} />
         ))}
       </ul>
     </div>
