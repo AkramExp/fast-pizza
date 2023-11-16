@@ -11,7 +11,7 @@ export default function CartOverview() {
   if (!totalCartQuantity) return null;
 
   return (
-    <footer className="flex bg-stone-800 text-stone-200 justify-between items-center px-4 py-4 uppercase text-sm">
+    <footer className="flex bg-stone-800 text-stone-200 justify-between items-center px-6 py-4 uppercase">
       <p className="space-x-4 font-semibold">
         <span>{totalCartQuantity} Pizzas</span>
         <span>{formatCurrency(totalCartPrice)}</span>
