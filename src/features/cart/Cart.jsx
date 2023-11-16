@@ -23,7 +23,9 @@ export default function Cart() {
         ))}
       </ul>
       <div className="mt-6 space-x-3">
-        <Button type="primary">Order Pizzas</Button>
+        <Button type="primary" to="/order/new">
+          Order Pizzas
+        </Button>
         <Button type="secondary" onClick={() => dispatch(clearCart())}>
           Clear Cart{" "}
         </Button>
