@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Form, useNavigation } from "react-router-dom";
+import { Form, redirect, useNavigation } from "react-router-dom";
 import { clearCart, getCart, getTotalCartPrice } from "../cart/cartSlice";
 import Button from "../../ui/Button";
 import { formatCurrency } from "../../../helpers";
 import { createOrder } from "../../services/apiRestaurant";
 import store from "../../../store";
+import EmptyCart from "../cart/EmptyCart";
 
 export default function CreateOrder() {
   const { username } = useSelector((state) => state.user);
@@ -17,6 +18,8 @@ export default function CreateOrder() {
   const priorityPrice = withPriority ? totalPrice * 0.2 : 0;
   const finalPrice = totalPrice + priorityPrice;
   const dispatch = useDispatch();
+
+  if (!cart.length) return <EmptyCart />;
 
   return (
     <div className="px-2 py-6">
@@ -82,8 +85,13 @@ export async function action({ request }) {
     cart: JSON.parse(data.cart),
     priority: data.priority === "true",
   };
+  console.log(order);
 
   const newOrder = await createOrder(order);
 
+  console.log(newOrder);
+
   store.dispatch(clearCart());
+
+  return redirect(`/order/${newOrder.id}`);
 }
