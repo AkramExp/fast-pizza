@@ -14,7 +14,7 @@ export default function Cart() {
   if (!cart.length) return <EmptyCart />;
 
   return (
-    <div className="mt-3 py-2">
+    <div className="px-4 py-3">
       <LinkButton to="-1">&larr; Back to Menu</LinkButton>
       <h1 className="mt-8 font-semibold text-lg mb-4">Your Cart, Akram</h1>
       <ul className="divide-y divide-stone-200 border-b">
