@@ -85,11 +85,8 @@ export async function action({ request }) {
     cart: JSON.parse(data.cart),
     priority: data.priority === "true",
   };
-  console.log(order);
 
   const newOrder = await createOrder(order);
-
-  console.log(newOrder);
 
   store.dispatch(clearCart());
 

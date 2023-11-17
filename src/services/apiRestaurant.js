@@ -32,6 +32,6 @@ export async function getOrder(id) {
   const res = await fetch(`${API_URL}/order/${id}`);
   if (!res.ok) throw new Error(`Could not find order with id ${id}`);
 
-  const { data } = res.json();
+  const { data } = await res.json();
   return data;
 }
