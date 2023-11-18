@@ -10,17 +10,19 @@ export default function CartItem({ pizza }) {
   const currentQuantity = useSelector(getCurrentQuantityById(pizzaId));
 
   return (
-    <div className="py-3 flex items-center justify-between">
+    <div className="py-3 flex items-center flex-wrap justify-between">
       <p>
         {quantity} x {name}
       </p>
-      <div className="flex items-center justify-between gap-6">
+      <div className="flex items-center justify-between w-full sm:w-auto sm:gap-6">
         <p className="font-semibold text-sm">{formatCurrency(totalPrice)}</p>
-        <UpdateItemQuantity
-          pizzaId={pizzaId}
-          currentQuantity={currentQuantity}
-        />
-        <DeleteItem pizzaId={pizzaId} />
+        <div className="flex gap-2">
+          <UpdateItemQuantity
+            pizzaId={pizzaId}
+            currentQuantity={currentQuantity}
+          />
+          <DeleteItem pizzaId={pizzaId} />
+        </div>
       </div>
     </div>
   );

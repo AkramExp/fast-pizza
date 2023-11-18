@@ -43,7 +43,7 @@ export default function MenuItem({ pizza }) {
           )}
 
           {isInCart && (
-            <div className="flex gap-8">
+            <div className="flex gap-2 sm:gap-8">
               <UpdateItemQuantity
                 pizzaId={id}
                 currentQuantity={currentQuantity}
