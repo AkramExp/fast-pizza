@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Form, redirect, useNavigation } from "react-router-dom";
 import { clearCart, getCart, getTotalCartPrice } from "../cart/cartSlice";
 import Button from "../../ui/Button";
@@ -17,7 +17,6 @@ export default function CreateOrder() {
   const totalPrice = useSelector(getTotalCartPrice);
   const priorityPrice = withPriority ? totalPrice * 0.2 : 0;
   const finalPrice = totalPrice + priorityPrice;
-  const dispatch = useDispatch();
 
   if (!cart.length) return <EmptyCart />;
 
@@ -35,20 +34,30 @@ export default function CreateOrder() {
             name="customer"
             defaultValue={username}
             required
-            className="input grow"
+            className="input grow sm:py-3"
           />
         </div>
         <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
           <label htmlFor="" className="sm:basis-40">
             Phone Number
           </label>
-          <input type="tel" name="phone" required className="input grow" />
+          <input
+            type="tel"
+            name="phone"
+            required
+            className="input grow sm:py-3"
+          />
         </div>
         <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
           <label htmlFor="" className="sm:basis-40">
             Address
           </label>
-          <input type="text" name="address" required className="input grow" />
+          <input
+            type="text"
+            name="address"
+            required
+            className="input grow sm:py-3"
+          />
         </div>
         <div className="flex items-center gap-4">
           <input
