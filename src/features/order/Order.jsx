@@ -21,7 +21,7 @@ export default function Order() {
 
   return (
     <div className="space-y-8 px-4 py-6">
-      <div className="flex justify-between items-center">
+      <div className="flex flex-wrap justify-between items-center gap-3">
         <h1 className="font-semibold text-xl">Order #{id} status</h1>
         <div className="space-x-4">
           {priority && (
@@ -35,7 +35,7 @@ export default function Order() {
         </div>
       </div>
 
-      <div className="flex items-center justify-between bg-stone-200 px-6 py-6">
+      <div className="flex flex-wrap gap-3 items-center justify-between bg-stone-200 px-6 py-6">
         <p className="font-medium">
           {deliveryIn >= 0
             ? `Only ${deliveryIn} minutes left 😀`
