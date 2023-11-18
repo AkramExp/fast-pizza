@@ -16,7 +16,7 @@ export default function Cart() {
   return (
     <div className="px-4 py-3">
       <LinkButton to="-1">&larr; Back to Menu</LinkButton>
-      <h1 className="mt-8 font-semibold text-lg mb-4">Your Cart, Akram</h1>
+      <h1 className="mt-8 font-semibold text-xl mb-4">Your Cart, Akram</h1>
       <ul className="divide-y divide-stone-200 border-b">
         {cart.map((pizza) => (
           <CartItem pizza={pizza} key={pizza.pizzaId} />
