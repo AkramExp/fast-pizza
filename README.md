@@ -1,5 +1,9 @@
 # Fast Pizza
 
+## Live Site
+
+https://fastpizza-akramexp.onrender.com/
+
 ## Description
 
 - It is a pizza ordering website with many functionalites similar to a real world food ordering applications.
