@@ -10,7 +10,7 @@ export default function CartItem({ pizza }) {
   const currentQuantity = useSelector(getCurrentQuantityById(pizzaId));
 
   return (
-    <div className="py-4 flex items-center justify-between">
+    <div className="py-3 flex items-center justify-between">
       <p>
         {quantity} x {name}
       </p>
