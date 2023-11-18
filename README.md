@@ -25,6 +25,13 @@ Install all the dependencies.
   npm i
 ```
 
+Install tailwind css
+
+```bash
+  npm install -D tailwindcss postcss autoprefixer
+  npx tailwindcss init -p
+```
+
 Run the application server.
 
 ```bash
